@@ -1,0 +1,12 @@
+.header {
+  width: 100%;
+  background-color: #ccc; /* светло-серый цвет */
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
