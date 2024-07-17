@@ -1,0 +1,47 @@
+.trustBoxContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background: url('/zzz.jpg') no-repeat center center/cover;
+    color: white;
+    margin-top: 84px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:  rgba(18, 40, 59, 0.7);
+}
+
+.trustText {
+    position: relative;
+    text-align: left;
+    padding: 20px;
+}
+
+.trustText h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.trustText ul {
+    list-style: none;
+    padding: 0;
+}
+
+.trustText li {
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.trustText li::before {
+    content: '✔️';
+    margin-right: 10px;
+}

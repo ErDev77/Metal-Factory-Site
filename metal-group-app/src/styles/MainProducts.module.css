@@ -1,0 +1,59 @@
+.productsHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 19%;
+    position: absolute;
+    margin-top: 3%;
+}
+
+.productsHeader h1{
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+
+.productsHeader span {
+    margin-left: 4px;
+    margin-bottom: 5%;
+}
+.productsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Три колонки равной ширины */
+  gap: 0px 25px; /* Расстояние между карточками */
+  margin: 0 auto; /* Центрирование контейнера карточек */
+  max-width: 900px; /* Максимальная ширина контейнера */
+  padding: 20px; /* Внутренний отступ для контейнера */
+  align-items: start; /* Выравнивание карточек по верхнему краю */
+  margin-left: 15%;
+  margin-top: 7%;
+}
+
+.container {
+    position: relative;
+    width: 1000px;
+}
+
+.container button {
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    background-color: white;
+    color: black;
+    border-color: blue;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 67%;
+}
+
+  .container button:hover {
+    background-color: #1D4ED8;
+    color: white;
+  }
+
+  .container button :active {
+    transform: translateY(1px);
+  }

@@ -1,12 +1,86 @@
 .header {
   width: 100%;
-  background-color: #ccc; /* светло-серый цвет */
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  /* background-color:	#18191A; */
+  background-color: #12283B;
   padding: 20px;
+  align-items: center;
   text-align: center;
   box-sizing: border-box;
+  height: 100px;
+
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 1.5rem;
+.header img {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  margin-left: 180px;
+}
+
+
+.nav {
+  display: flex;
+  gap: 50px;
+  width: 600px;
+  position: relative;
+  right: 100px;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: blue;
+}
+
+.nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.nav a span {
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 10px;
+  }
+
+  .header img {
+    margin-left: 0;
+  }
+
+  .nav {
+    width: auto;
+    gap: 30px;
+    right: 0;
+  }
+
+  .nav a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
 }

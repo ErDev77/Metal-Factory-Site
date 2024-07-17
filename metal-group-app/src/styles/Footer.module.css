@@ -1,0 +1,92 @@
+/* Footer.module.css */
+
+.footer {
+    background: #12283B;
+    color: white;
+    padding: 60px 0; /* Увеличиваем padding для футера */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-top: 55px;
+    gap: 20px; /* Добавляем промежуток между секциями */
+}
+
+.logoSection,
+.addressSection,
+.contactsSection {
+    flex: 1;
+}
+
+.contactsSectionLine {
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    width: 100%; /* Устанавливаем ширину линии */
+    margin-bottom: 10px; /* Добавляем отступ снизу */
+}
+
+.addressSectionLine {
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    width: 100%; /* Устанавливаем ширину линии */
+    margin-bottom: 10px; /* Добавляем отступ снизу */
+}
+
+.logoSection h3 {
+    font-size: 18px;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.socialIcons a {
+    margin-right: 10px;
+}
+
+
+.addressSection h3,
+.contactsSection h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.addressSection p,
+.contactsSection p {
+    margin: 5px 0;
+}
+
+.map iframe {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.verticalLine {
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    height: auto; /* Устанавливаем автоматическую высоту */
+    align-self: stretch; /* Растягиваем вертикальную линию по высоте секции */
+    margin: 0 20px; /* Промежуток между линией и секциями */
+}
+
+.footerBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем по горизонтали */
+    padding-top: 100px;
+    margin-top: 20px;
+}
+
+.footerBottomLine {
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    width: 80%; /* Устанавливаем ширину линии */
+    margin-bottom: 10px; /* Добавляем отступ снизу */
+}
+
+.footerBottomText {
+    text-align: center;
+}
+
+

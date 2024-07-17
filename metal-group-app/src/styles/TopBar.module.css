@@ -1,0 +1,51 @@
+
+.topBar {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  background-color: #F0F0F0;
+  padding: 10px 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.nav {
+  display: flex;
+  gap: 200px;
+  position: relative;
+  align-items: center;
+}
+
+.nav span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  /* .nav {
+    gap: 100px;
+  } */
+   .topBar {
+    display: none;
+   }
+}
+
+@media (max-width: 768px) {
+  /* .topBar {
+    flex-direction: row;
+    height: auto;
+  }
+
+  .nav {
+    flex-direction: row;
+    gap: 20px;
+  } */
+      .topBar {
+    display: none;
+   }
+}

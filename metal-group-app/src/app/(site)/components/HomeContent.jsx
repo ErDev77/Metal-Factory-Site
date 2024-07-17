@@ -1,11 +1,20 @@
-import React from 'react'
-import styles from'@/styles/globals.module.css'
+'use client'
 
+import React from 'react'
+import '@/styles/globals.module.css'
+import MainSlider from '@/components/MainSlider'
+import MainBoxes from '@/components/MainBoxes'
+import MainProducts from '@/components/MainProducts'
+import SponsorsSlider from '@/components/SponsorsSlider'
+import TrustBox from '@/components/TrustBox'
 const HomeContent = () => {
 	return (
 		<div>
-			<h1>Main Page Content</h1>
-			<p>This is the content of the main page.</p>
+			<MainSlider />
+			<MainBoxes />
+			<MainProducts />
+			<TrustBox />
+			 <SponsorsSlider /> 
 		</div>
 	)
 }
