@@ -1,0 +1,414 @@
+.aboutUsContainer {
+  background-color: #f0f0f0; 
+  min-height: 800px; 
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.aboutUsContainerPhoto {
+  position: relative;
+}
+
+.aboutUsContainerPhoto img {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.overlayTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.horizontalLine {
+    border-top: 1px solid grey;
+    width: 115%;
+    margin-bottom: 1px;
+    margin-top: 3px;
+}
+
+.aboutCompanyBox  {
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+    flex-direction: row;
+}
+
+.aboutCompanyTitle {
+  position: absolute;
+top: 7%;
+    left: 62%;  
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 3rem ;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); */
+}
+
+.aboutCompanyBox h3 {
+      position: absolute;
+    margin-left: 53%;
+    color: #303030;
+    margin-top: 46px;
+}
+
+.aboutCompanyBox img {
+height: 600px;
+    width: 500px;
+    border-radius: 8px;
+    margin-left: 11%;
+    margin-top: 3%;
+}
+
+.aboutCompanyText {
+  color: grey;
+    margin-top: 10%;
+    width: 500px;
+    margin-left: 8%;
+}
+
+.aboutCompanyText2 {
+color: grey;
+    width: 1200px;
+    height: auto;
+    margin-left: -76%;
+    margin-top: 48%;
+}
+
+.sertificatesBox {
+    position: relative;
+  height: auto;
+  width: 100%;
+}
+
+.sertificatesBoxTitle {
+  position: absolute;
+  margin-left: 43%;
+}
+
+.pdfBox {
+  margin-left: 30%;
+  margin-top: 7%;
+}
+
+.textOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1; /* Это гарантирует, что overlay будет над слайдером */
+  width: 80%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.textOverlay h1,
+.textOverlay p {
+  color: #0070f3; 
+  margin: 0;
+}
+
+.textOverlay h1 span,
+.textOverlay p span {
+   display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+  margin-right: 10px; 
+}
+
+.textOverlay h1 span:nth-child(1),
+.textOverlay p span:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.textOverlay h1 span:nth-child(2),
+.textOverlay p span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.textOverlay h1 span:nth-child(3),
+.textOverlay p span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tabSection {
+  display: flex;
+  gap: 20px;
+  margin-top: 38px;
+}
+
+.tabContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 200px; /* Задайте ширину для контейнера с кнопками */
+}
+
+.tabButton {
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+  width: 100%;
+   height: 20px;
+   
+}
+
+.tabButton.active {
+  background-color: #0070f3;
+  color: white;
+}
+
+.tabContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.tabPanel {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 2px;
+  width: 72%;
+  height: 95%;
+  margin-top: 3px;
+}
+
+.tabPanel p {
+  color: grey;
+}
+
+.imagesContainer {
+  display: flex;
+  justify-content: space-between; /* Распределение пространства между изображениями */
+  align-items: center; /* Вертикальное выравнивание изображений */
+  gap: 20px; /* Зазор между изображениями */
+  margin-top: 20px;
+  flex-direction: row;
+        gap: 20px;
+        width: 1000px;
+        margin-left: 17%;
+        margin-top: 8%;
+}
+
+.imagesContainer img {
+  width: 48%; /* Ширина каждого изображения */
+  border-radius: 8px;
+}
+
+.rightColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.rightColumn img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Мобильные устройства */
+/* Мобильные устройства */
+/* Мобильные устройства */
+@media (max-width: 600px) {
+  .aboutUsContainer {
+    padding: 10px;
+  }
+  
+  .aboutUsContainerPhoto img {
+    height: 300px;
+  }
+
+  .aboutCompanyBox {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aboutCompanyTitle, 
+  .aboutCompanyBox h3,
+  .aboutCompanyBox img, 
+  .aboutCompanyText, 
+  .aboutCompanyText2 {
+    position: static;
+    margin: 10px 0;
+    width: 90%;
+    text-align: center;
+  }
+
+    .aboutCompanyTitle {
+              margin-left: 91%;
+        margin-top: 7%;
+    }
+
+  .aboutCompanyBox img {
+    height: auto;
+    width: 70%;
+  }
+
+  .aboutCompanyText2 {
+    margin-top: 20px;
+  }
+
+    .aboutCompanyText {
+      margin-top: -6%;
+    }
+  .sertificatesBoxTitle, .pdfBox {
+    position: static;
+    margin: 10px auto;
+    width: 90%;
+    text-align: center;
+  }
+
+  .textOverlay {
+    width: 90%;
+  }
+
+  .tabSection {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .tabContainer {
+    width: 100%;
+    margin: 0;
+  }
+
+  .tabButton {
+    height: auto;
+  }
+
+  .tabContent {
+    width: 100%;
+  }
+
+  .tabPanel {
+    width: 100%;
+    height: auto;
+  }
+
+  .imagesContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .imagesContainer img {
+    width: 32%;
+        margin-left: -74%;
+  }
+}
+
+/* Планшеты */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .aboutUsContainer {
+    padding: 15px;
+  }
+
+  .aboutUsContainerPhoto img {
+    height: 400px;
+  }
+
+  .aboutCompanyBox {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aboutCompanyTitle, 
+  .aboutCompanyBox h3,
+  .aboutCompanyBox img, 
+  .aboutCompanyText, 
+  .aboutCompanyText2 {
+    position: static;
+    margin: 10px 0;
+    width: 80%;
+    text-align: center;
+  }
+
+  .aboutCompanyBox img {
+    height: auto;
+    width: 100%;
+  }
+
+  .aboutCompanyText2 {
+    margin-top: 20px;
+  }
+
+  .sertificatesBoxTitle, .pdfBox {
+    position: static;
+    margin: 10px auto;
+    width: 80%;
+    text-align: center;
+  }
+
+  .textOverlay {
+    width: 80%;
+  }
+
+  .tabSection {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .tabContainer {
+    width: 100%;
+    margin: 0;
+  }
+
+  .tabButton {
+    height: auto;
+  }
+
+  .tabContent {
+    width: 100%;
+  }
+
+  .tabPanel {
+    width: 100%;
+    height: auto;
+  }
+
+  .imagesContainer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .imagesContainer img {
+    width: 100%;
+  }
+}

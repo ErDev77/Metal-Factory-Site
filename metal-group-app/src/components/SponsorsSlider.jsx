@@ -17,22 +17,46 @@ const SponsorsSlider = () => {
 		cssEase: 'linear', 
 	}
 
-	const sponsors = [
-		'/sponsor1.png',
-		'/sponsor2.png',
-		'/sponsor3.png',
-		'/sponsor4.png',
-		'/sponsor5.png',
-		'/sponsor6.png',
-		'/sponsor7.png',
-	]
+const sponsors = [
+	{
+		image: '/sponsor1.png',
+		link: 'https://corporate.arcelormittal.com/',
+	},
+	{
+		image: '/sponsor2.png',
+		link: 'https://metinvestholding.com/',
+	},
+	{
+		image: '/sponsor3.png',
+		link: 'https://www.bakusteel.com/en/home/',
+	},
+	{
+		image: '/sponsor4.png',
+		link: 'https://www.yucelboru.com.tr/index.php',
+	},
+	{
+		image: '/sponsor5.png',
+		link: 'https://www.metallotorg.ru/',
+	},
+	{
+		image: '/sponsor6.png',
+		link: 'https://www.rustavisteel.ge/',
+	},
+	{
+		image: '/sponsor7.png',
+		link: 'https://www.tosyaliholding.com.tr/',
+	},
+]
+
 
 	return (
 		<div className={styles.sponsorsSliderContainer}>
 			<Slider {...settings}>
-				{sponsors.map((src, index) => (
+				{sponsors.map((sponsor, index) => (
 					<div key={index} className={styles.slickSlide}>
-						<img src={src} alt={`Sponsor ${index + 1}`} />
+						<a href={sponsor.link} target='_blank' rel='noopener noreferrer'>
+							<img src={sponsor.image} alt={`Sponsor ${index + 1}`} />
+						</a>
 					</div>
 				))}
 			</Slider>

@@ -1,0 +1,251 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.pageContainer h1 {
+    margin-left: 8%;
+}
+
+.checkoutContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1%;
+}
+
+.deliveryInfo,
+.orderSummary {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.deliveryInfo {
+    width: 46%;
+    margin-left: 8%;
+}
+
+.orderSummary {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 28%;
+    max-height: 80vh;
+    overflow: hidden; /* Отключаем стандартный скролл */
+    display: flex;
+    flex-direction: column;
+    margin-right: 7%;
+}
+
+.orderItems {
+    flex: 1;
+    overflow-y: auto; /* Скролл только для содержимого */
+}
+
+.orderSummaryFooter {
+    margin-top: auto; /* Располагаем футер внизу */
+}
+
+.formBox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.submitButton {
+    width: 100%;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.formGroup label {
+    margin-bottom: 5px;
+}
+
+.formGroup input {
+    width: 90%;
+    color: rgb(36, 35, 42);
+    font-size: 16px;
+    line-height: 20px;
+    min-height: 28px;
+    border-radius: 4px;
+    padding: 8px 16px;
+    border: 1px solid grey;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    background: rgb(251, 251, 251);
+    transition: all 0.1s ease 0s;
+}
+
+.formGroup input:focus {
+    border: 2px solid grey; /* Изменено на серый цвет */
+    outline: none; /* Убираем стандартный контур браузера */
+}
+
+/* Стили для состояния ошибки */
+.formGroup input.error {
+    border: 2px solid red;
+}
+
+.formGroup p.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.scheduleDelivery,
+.paymentMethod {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.scheduleDelivery input,
+.paymentMethod input {
+    margin-right: 10px;
+}
+
+.cartItem {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.cartItem img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.cartItemDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.submitButton {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.submitButton:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 600px) {
+  .pageContainer {
+    padding: 10px;
+  }
+
+  .pageContainer h1 {
+    margin-left: 0;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .checkoutContainer {
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+        margin-left: 14px;
+  }
+
+  .deliveryInfo, 
+  .orderSummary {
+    width: 100%;
+    margin: 0;
+  }
+
+  .orderSummary {
+    margin-top: 20px;
+    margin-right: 0;
+    max-height: none;
+  }
+
+  .formGroup {
+    width: 100%;
+  }
+
+  .cartItem {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cartItem img {
+    margin-bottom: 10px;
+  }
+
+  .submitButton {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .pageContainer {
+    padding: 15px;
+  }
+
+  .pageContainer h1 {
+    margin-left: 5%;
+    font-size: 2em;
+  }
+
+  .checkoutContainer {
+    flex-direction: row;
+    gap: 20px;
+    
+  }
+
+  .deliveryInfo {
+
+        width: 76%;
+        margin-left: 1%;
+        height: auto;
+  }
+
+  .formBox {
+    flex-direction: column;
+  }
+
+
+  .orderSummary {
+width: 74%; 
+margin-right: 0%; 
+max-height: 619px;
+  }
+
+  .formGroup {
+     width: 97%;
+  }
+
+  .cartItem {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .cartItem img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .submitButton {
+    padding: 12px;
+    font-size: 17px;
+  }
+}
+

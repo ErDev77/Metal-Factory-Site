@@ -1,0 +1,108 @@
+.servicesBoxContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background: url('/services.jpg') no-repeat center center/cover;
+    color: white;
+    margin-top: 84px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(18, 40, 59, 0.7);
+}
+
+.servicesText {
+    position: relative;
+    text-align: left;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.servicesText h2 {
+    font-size: 36px;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.servicesText ul {
+    list-style: none;
+    padding: 0;
+    gap: 35px;
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: row; /* Changed to row for horizontal layout */
+    justify-content: center; /* Centering the items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap if they exceed container width */
+}
+
+.servicesText li {
+    font-size: 17px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, .20);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+@media (max-width: 1024px) {
+  .servicesText {
+        margin-top: 0;
+  }
+  .servicesText h2 {
+      font-size: 28px;
+  }
+
+  .servicesText ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .servicesText li {
+      width: 100%;
+      height: auto;
+      font-size: 18px;
+      padding: 10px;
+      margin-top: 115px;
+  }
+}
+
+@media (max-width: 600px) {
+.servicesBoxContainer {
+    height: 340px;
+}
+  .servicesText h2 {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 10px;
+      
+  }
+
+  .servicesText ul {
+    gap: 0px;
+        width: 426px;
+        height: 23px;
+        margin-bottom: 43%;
+  }
+
+  .servicesText li {
+      font-size: 11px;
+      padding: 10px;
+      width: 172px;
+        height: 134px;
+  }
+}

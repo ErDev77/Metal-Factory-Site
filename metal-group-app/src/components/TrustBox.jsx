@@ -1,15 +1,18 @@
 import styles from '@/styles/TrustBox.module.css'
-
+import { useTranslation } from 'react-i18next'
 const TrustBox = () => {
+
+	const { t, i18n } = useTranslation()
+
 	return (
 		<div className={styles.trustBoxContainer}>
 			<div className={styles.overlay}></div>
 			<div className={styles.trustText}>
-				<h2>Thousands of consumers trust us...</h2>
+				<h2>{t('trust_header')}...</h2>
 				<ul>
-					<li>We've expert and certified staff</li>
-					<li>We only provide quality services</li>
-					<li>We offer you free estimates</li>
+					<li>{t('expert_staff')}</li>
+					<li>{t('quality_services')}</li>
+					<li>{t('cooperate_best')}</li>
 				</ul>
 			</div>
 		</div>

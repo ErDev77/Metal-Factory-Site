@@ -2,7 +2,7 @@
   position: relative;
   text-align: center;
   color: #fff;
-  background: #364d79;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,9 +11,71 @@
   overflow: hidden;
 }
 
+.textOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1;
+  width: 80%;
+  opacity: 0; /* Измените на 1, чтобы текст был виден */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.textOverlay h1,
+.textOverlay p {
+  color: #0070f3;
+  margin: 0;
+}
+
+.textOverlay h1 span,
+.textOverlay p span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+  margin-right: 10px;
+}
+
+.textOverlay h1 span:nth-child(1),
+.textOverlay p span:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.textOverlay h1 span:nth-child(2),
+.textOverlay p span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.textOverlay h1 span:nth-child(3),
+.textOverlay p span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .slickSlide img {
   width: 100%;
-  height: 610px;
+  height: 500px;
+  transition: transform 0.5s;
+  animation: zoomIn 4s ease forwards;
+}
+
+.slickSlide video {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
   transition: transform 0.5s;
   animation: zoomIn 4s ease forwards;
 }

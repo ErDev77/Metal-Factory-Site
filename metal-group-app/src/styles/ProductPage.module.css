@@ -1,56 +1,108 @@
 .productPage {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
   padding: 20px;
+  background-color: #fff;
+    border: 1px solid #ccc;
+    width: 1433px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 27px;
+    margin-left: 21px;
+}
+
+.productImageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  max-width: 600px;
+  position: sticky;
+  top: 20px;
+  height: auto;
+  overflow: hidden;
+}
+
+.productImage {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .productDetails {
-  width: 100%;
-  max-width: 800px;
-  margin: 20px auto;
+  flex: 1;
+  max-width: 600px;
+  margin-left: 20px;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
-.productDetails img {
-  max-width: 100%;
-  height: auto;
-  margin: 20px 0;
-}
-
-.lengthOptions {
-  margin-top: 20px;
-}
-
-.lengthOptions h3 {
+.inStock {
+  font-weight: bold;
+  color: green;
   margin-bottom: 10px;
 }
 
-.lengthOptions ul {
-  list-style: none;
-  padding: 0;
+.deliveryOptions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.lengthOptions ul li {
+.deliveryOptions label {
+  display: flex;
+  align-items: center;
   padding: 10px;
-  background-color: #f7f7f7;
-  border: 1px solid #ddd;
+  border: 2px solid #0070f3;
   border-radius: 4px;
-  margin-bottom: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.lengthOptions ul li:hover {
-  background-color: #e7e7e7;
+.deliveryOptions input {
+  margin-right: 10px;
 }
 
-.button {
-  padding: 10px 20px;
+.deliveryOptions label:hover {
+  background-color: #f0faff;
+}
+
+.lengthOptions {
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lengthOptions h3 {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.sizeText {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #666;
+  margin-top: 12px;
+}
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 14px;
+  margin-left: 10px;
+}
+
+.quantitySelector button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #0070f3;
   color: white;
   border: none;
@@ -59,6 +111,196 @@
   transition: background-color 0.3s ease;
 }
 
-.button:hover {
+.quantitySelector button:hover {
   background-color: #005bb5;
+}
+
+.quantitySelector span {
+  width: 30px;
+  text-align: center;
+}
+
+.lengthOptionsContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  width: 100%;
+}
+
+.lengthOptionsContent.visible {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.lengthOptionsContent ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.lengthOptionsContent li {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.lengthOptionsContent li:hover {
+  background-color: #eee;
+}
+
+.tabContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  width: 1433px;
+  margin-left: 42px;
+}
+
+.tabButton {
+  flex: 1;
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 7px;
+  transition: background-color 0.3s ease;
+}
+
+.tabButton.active {
+  background-color: #0070f3;
+  color: white;
+}
+
+.tabContent {
+  display: none;
+  padding: 20px;
+}
+
+.tabContent.active {
+  display: block;
+}
+
+.productDescription,
+.productSpecs {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: -19px;
+}
+
+.productDescription h4,
+.productSpecs h4 {
+  margin-top: 0;
+}
+
+.getDeliveryText {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+
+.addToButton {
+  background-color: #007bff; 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+      margin-top: 25px;
+}
+
+.addToButton:hover {
+  background-color: #0056b3; 
+}
+
+
+/* Стили для мобильных устройств (максимальная ширина экрана 600px) */
+@media (max-width: 600px) {
+  .productPage {
+        flex-direction: column;
+        width: 92%;
+        margin-left: 6px;
+        padding: 10px;
+        box-shadow: none;
+  }
+
+  .productImageContainer {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .productImage {
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .productDetails {
+    margin-left: 0;
+    padding: 10px;
+    max-width: none;
+  }
+
+  .tabContainer {
+    flex-direction: column;
+width: 79%;
+        margin-left: 25px;
+  }
+
+  .tabButton {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Стили для планшетов (минимальная ширина экрана 601px и максимальная ширина экрана 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .productPage {
+ flex-direction: row;     width: 92%;
+    margin-left: 22px;
+    padding: 10px;
+    box-shadow: none;
+  }
+
+  .productImageContainer {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .productImage {
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .productDetails {
+    margin-left: 0;
+    padding: 10px;
+    max-width: none;
+  }
+
+  .tabContainer {
+    flex-direction: column;
+    width: 85%;
+    margin-left: 42px;
+  }
+
+  .tabButton {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }

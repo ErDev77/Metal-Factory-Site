@@ -47,24 +47,33 @@ const MainSlider = () => {
 			<Slider ref={sliderRef} {...settings}>
 				<div className={styles.slickSlide}>
 					<img src='/slide.jpg' alt='Slide 1' />
-					<div className={styles.slideContent}>
-						<h2>Title 1</h2>
-						<p>Description 1</p>
+					<div className={styles.textOverlay}>
+						<h1>
+							<span>Welcome</span>
+							<span>to</span>
+							<span>Our Company</span>
+						</h1>
+						<p>
+							<span>Providing top-notch</span>
+							<span>metal products and</span>
+							<span>solutions for construction</span>
+						</p>
 					</div>
 				</div>
 				<div className={styles.slickSlide}>
 					<img src='/nnn.jpg' alt='Slide 2' />
-					<div className={styles.slideContent}>
-						<h2>Title 2</h2>
-						<p>Description 1</p>
-					</div>
-				</div>
-				<div className={styles.slickSlide}>
-					<img src='/zzz.jpg' alt='Slide 3' />
-					<div className={styles.slideContent}>
-						<h2>Title 3</h2>
-						<p>Description 1</p>
-					</div>
+					{/* <div className={styles.textOverlay}>
+						<h1>
+							<span>Welcome</span>
+							<span>to</span>
+							<span>Our Company</span>
+						</h1>
+						<p>
+							<span>Providing top-notch</span>
+							<span>metal products and</span>
+							<span>solutions for construction</span>
+						</p>
+					</div> */}
 				</div>
 			</Slider>
 			<div className={styles.sliderControls}>

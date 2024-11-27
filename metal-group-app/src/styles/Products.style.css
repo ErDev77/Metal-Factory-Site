@@ -21,12 +21,12 @@
 }
 .productsContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Три колонки равной ширины */
-  gap: 0px 25px; /* Расстояние между карточками */
-  margin: 0 auto; /* Центрирование контейнера карточек */
-  max-width: 900px; /* Максимальная ширина контейнера */
-  padding: 20px; /* Внутренний отступ для контейнера */
-  align-items: start; /* Выравнивание карточек по верхнему краю */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 0px 25px; 
+  margin: 0 auto; 
+  max-width: 900px; 
+  padding: 20px;
+  align-items: start;
   margin-left: 15%;
   margin-top: 7%;
 }
@@ -57,3 +57,86 @@
   .container button :active {
     transform: translateY(1px);
   }
+
+
+  /* Стили для мобильных устройств (максимальная ширина экрана 600px) */
+@media (max-width: 600px) {
+  .productsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 5%;
+    margin-top: 2%;
+    position: static;
+  }
+
+  .productsHeader h1 {
+    margin: 0;
+  }
+
+  .productsHeader span {
+    margin: 0;
+    margin-bottom: 2%;
+  }
+
+  .productsContainer {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 5%;
+  }
+
+  .container {
+    width: 100%;
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .container button {
+    width: 100%;
+    padding: 10px;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+/* Стили для планшетов (минимальная ширина экрана 601px и максимальная ширина экрана 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .productsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 5%;
+    margin-top: 2%;
+    position: static;
+  }
+
+  .productsHeader h1 {
+    margin: 0;
+  }
+
+  .productsHeader span {
+    margin: 0;
+    margin-bottom: 2%;
+  }
+
+  .productsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 5%;
+  }
+
+  .container {
+    width: 100%;
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .container button {
+    width: 100%;
+    padding: 10px;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

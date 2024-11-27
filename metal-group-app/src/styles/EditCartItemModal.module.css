@@ -1,0 +1,130 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.formGroup input,
+.formGroup select {
+     width: calc(100% - 16px);
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+
+
+.buttonGroup .saveButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buttonGroup .saveButton:hover {
+  background-color: #0056b3; 
+}
+
+.cancelButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* Стили для мобильных устройств (максимальная ширина экрана 600px) */
+@media (max-width: 600px) {
+  .modalContent {
+padding: 15px;
+        width: 61%;
+        max-width: 90%;
+        margin-top: -61%;
+        margin-left: -9%;
+  }
+
+  .formGroup input,
+  .formGroup select {
+    padding: 8px;
+    width: 100%;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .buttonGroup .saveButton,
+  .cancelButton {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+/* Стили для планшетов (минимальная ширина экрана 601px и максимальная ширина экрана 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .modalContent {
+    padding: 20px;
+    width: 85%;
+    max-width: 600px;
+    margin-top: -68%;
+  }
+
+  .formGroup input,
+  .formGroup select {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .buttonGroup {
+    gap: 15px;
+  }
+
+  .buttonGroup .saveButton,
+  .cancelButton {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}
+

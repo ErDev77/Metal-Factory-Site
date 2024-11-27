@@ -3,61 +3,53 @@ import { MdGppGood } from 'react-icons/md'
 import { TbTruckDelivery } from 'react-icons/tb'
 import { FaArrowCircleRight } from 'react-icons/fa'
 import { FaClipboardList } from "react-icons/fa";
-import enTranslations from '../locales/en/translation.json'
-import ruTranslations from '../locales/ru/translation.json'
-import { useState, useEffect } from 'react';
-const MainBoxes = ({ lang }) => {
-    const [locale, setLocale] = useState(lang || 'en')
-	const translations = locale === 'en' ? enTranslations : ruTranslations
+import { GrCertificate } from 'react-icons/gr'
+
+import { Trans, useTranslation } from 'react-i18next'
+import Link from 'next/link';
+const MainBoxes = () => {
+
+	const { t, i18n } = useTranslation()
 
     return (
 			<div className={styles.container}>
 				<div className={styles.MainBox}>
 					<span>
-						<MdGppGood size={50} color='blue' />
+						<GrCertificate size={50} color='blue' />
 					</span>
-					<h1>{translations.Quality}</h1>
-					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati,
-						placeat dolorem veniam ipsum nisi eligendi cumque earum totam ipsa
-						quos necessitatibus id sunt quis temporibus, exercitationem
-						praesentium vel dicta voluptatum?
-					</p>
+					<h1>{t('best_quality')}</h1>
+					<p>{t('best_quality_text')}</p>
 					<div className={styles.ReadMore}>
-						<p>{translations.ReadMore}...</p>
-						<FaArrowCircleRight color='blue' />
+						<p>{t('read_more')}...</p>
+						<a href='/about'>
+							<FaArrowCircleRight color='blue' />
+						</a>
 					</div>
 				</div>
 				<div className={styles.MainBox}>
 					<span>
-						<TbTruckDelivery size={50} color='blue' />
+						<MdGppGood size={50} color='blue' />
 					</span>
-					<h1>{translations.Delivery}</h1>
-					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati,
-						placeat dolorem veniam ipsum nisi eligendi cumque earum totam ipsa
-						quos necessitatibus id sunt quis temporibus, exercitationem
-						praesentium vel dicta voluptatum?
-					</p>
+					<h1>{t('market_experience')}</h1>
+					<p>{t('market_experience_text')}</p>
 					<div className={styles.ReadMore}>
-						<p>{translations.ReadMore}...</p>
-						<FaArrowCircleRight color='blue' />
+						<p>{t('read_more')}...</p>
+						<a href='/about'>
+							<FaArrowCircleRight color='blue' />
+						</a>
 					</div>
 				</div>
 				<div className={styles.MainBox}>
 					<span>
 						<FaClipboardList size={50} color='blue' />
 					</span>
-					<h1>{translations.Selection}</h1>
-					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati,
-						placeat dolorem veniam ipsum nisi eligendi cumque earum totam ipsa
-						quos necessitatibus id sunt quis temporibus, exercitationem
-						praesentium vel dicta voluptatum?
-					</p>
+					<h1>{t('huge_selection')}</h1>
+					<p>{t('huge_selection_text')}</p>
 					<div className={styles.ReadMore}>
-						<p>{translations.ReadMore}...</p>
-						<FaArrowCircleRight color='blue' />
+						<p>{t('read_more')}...</p>
+						<a href='/products'>
+							<FaArrowCircleRight color='blue' />
+						</a>
 					</div>
 				</div>
 			</div>

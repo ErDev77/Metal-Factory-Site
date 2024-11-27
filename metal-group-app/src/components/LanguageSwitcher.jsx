@@ -1,31 +1,53 @@
-// // components/LanguageSwitcher.jsx
-// import React from 'react'
-// import { useTranslation } from 'next-translate'
+import React, {useState, useEffect} from 'react'
+import { useTranslation } from 'react-i18next'
+import i18n from './i18n'
+import styles from '@/styles/Header.module.css'
+import LoadingPage from './LoadingPage'
 
-// const LanguageSwitcher = () => {
-// 	const { lang, t, setLang } = useTranslation()
+const LanguageSwitcher = () => {
+	const { t } = useTranslation()
+	const [loading, setLoading] = useState(true)
 
-// 	const changeLanguage = newLang => {
-// 		setLang(newLang)
-// 	}
+	
+	const changeLanguage = language => {
+		i18n.changeLanguage(language)
+	}
+	
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setLoading(false)
+		}, 1000)
 
-// 	return (
-// 		<div className='language-switcher'>
-// 			<button
-// 				onClick={() => changeLanguage('en')}
-// 				className={lang === 'en' ? 'active' : ''}
-// 			>
-// 				English
-// 			</button>
-// 			<button
-// 				onClick={() => changeLanguage('ru')}
-// 				className={lang === 'ru' ? 'active' : ''}
-// 			>
-// 				Русский
-// 			</button>
-// 			{/* Добавьте другие языки, если необходимо */}
-// 		</div>
-// 	)
-// }
+		return () => clearTimeout(timer)
+	}, [])
 
-// export default LanguageSwitcher
+	if (loading) {
+		return <LoadingPage />
+	}	
+
+	
+	return (
+		<div className={styles.languageSwitcher}>
+			<img
+				src='/united-states.png'
+				alt='English'
+				className={styles.languageSwitcher__flag}
+				onClick={() => changeLanguage('en')}
+			/>
+			<img
+				src='/russ.png'
+				alt='Russian'
+				className={styles.languageSwitcher__flag}
+				onClick={() => changeLanguage('ru')}
+			/>
+			<img
+				src='/georg.png'
+				alt='Georgian'
+				className={styles.languageSwitcher__flag}
+				onClick={() => changeLanguage('ka')}
+			/>
+		</div>
+	)
+}
+
+export default LanguageSwitcher

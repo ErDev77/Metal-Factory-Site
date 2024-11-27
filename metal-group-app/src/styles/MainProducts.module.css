@@ -21,12 +21,12 @@
 }
 .productsContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Три колонки равной ширины */
-  gap: 0px 25px; /* Расстояние между карточками */
-  margin: 0 auto; /* Центрирование контейнера карточек */
-  max-width: 900px; /* Максимальная ширина контейнера */
-  padding: 20px; /* Внутренний отступ для контейнера */
-  align-items: start; /* Выравнивание карточек по верхнему краю */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 0px 25px; 
+  margin: 0 auto; 
+  max-width: 900px; 
+  padding: 20px; 
+  align-items: start; 
   margin-left: 15%;
   margin-top: 7%;
 }
@@ -34,6 +34,7 @@
 .container {
     position: relative;
     width: 1000px;
+    top: -40px;
 }
 
 .container button {
@@ -57,3 +58,97 @@
   .container button :active {
     transform: translateY(1px);
   }
+
+
+@media (max-width: 600px) {
+  .productsHeader {
+flex-direction: row;
+        margin-left: 8%;
+        margin-top: 12%;
+        gap: 12px;
+        font-size: 10px;
+        align-items: center;
+  }
+
+  .productsHeader h1 {
+    margin-left: 0;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .productsHeader span {
+        margin-left: -5px;
+        margin-bottom: -4px;
+        text-align: center;
+  }
+
+  .productsContainer {
+grid-template-columns: repeat(3, 1fr);
+        gap: 23px;
+        max-width: 83%;
+        margin-left: 5%;
+        padding: 10px;
+        margin-top: 23%;
+  }
+
+  .productsHeader h1 {
+    font: 15px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .container button {
+width: 40%;
+        margin-left: 28%;
+        padding: 1rem;
+        font-size: 12px;
+        margin-top: 12px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .productsHeader {
+    flex-direction: row;
+    margin-left: 10%;
+    margin-top: 4%;
+    justify-content: space-between;
+  }
+
+  .productsHeader h1 {
+    margin-left: 0;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .productsHeader span {
+    margin-left: 0;
+    margin-bottom: 5%;
+    text-align: center;
+  }
+
+  
+  .productsContainer {
+grid-template-columns: repeat(3, 1fr);
+        gap: 82px;
+        max-width: 100%;
+        margin-left: 5%;
+        padding: 10px;
+        margin-top: 10%;
+  }
+
+  .container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .container button {
+    width: auto;
+    margin-left: 0;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+

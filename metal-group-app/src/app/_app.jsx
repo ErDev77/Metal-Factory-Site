@@ -1,19 +1,14 @@
-
 import React from 'react'
 import RootLayout from '@/app/layout'
-import { LanguageProvider } from '../context/LanguageContext'
-
+import '../components/i18n'
+import { LoadingProvider } from './LoadingContext'
+import LoadingPage from '@/components/LoadingPage'
 function MyApp({ Component, pageProps }) {
 	return (
-		<React.StrictMode>
-			<LanguageProvider>
-				<RootLayout>
-					<Component {...pageProps} />
-				</RootLayout>
-			</LanguageProvider>
-		</React.StrictMode>
+			<RootLayout>
+				<Component {...pageProps} />
+			</RootLayout>
 	)
 }
 
-export default MyApp;
-
+export default MyApp

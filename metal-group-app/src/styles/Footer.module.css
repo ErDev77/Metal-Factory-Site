@@ -1,9 +1,8 @@
-/* Footer.module.css */
 
 .footer {
     background: #12283B;
     color: white;
-    padding: 60px 0; /* Увеличиваем padding для футера */
+    padding: 60px 0;
 }
 
 .container {
@@ -13,7 +12,7 @@
     margin: 0 auto;
     padding: 0 20px;
     margin-top: 55px;
-    gap: 20px; /* Добавляем промежуток между секциями */
+    gap: 20px;
 }
 
 .logoSection,
@@ -24,14 +23,15 @@
 
 .contactsSectionLine {
     border-top: 2px solid rgba(255, 255, 255, 0.1);
-    width: 100%; /* Устанавливаем ширину линии */
-    margin-bottom: 10px; /* Добавляем отступ снизу */
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .addressSectionLine {
     border-top: 2px solid rgba(255, 255, 255, 0.1);
-    width: 100%; /* Устанавливаем ширину линии */
-    margin-bottom: 10px; /* Добавляем отступ снизу */
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 29px;
 }
 
 .logoSection h3 {
@@ -43,10 +43,45 @@
     margin-bottom: 20px;
 }
 
+.socialIcons {
+    display: flex;
+    gap: 10px;
+}
+
 .socialIcons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.socialIcons a:hover {
+    background: blue;
+}
+
+.socialIcons a:hover .icon {
+    color: white;
+}
+
+.icon {
+    color: blue;
+    font-size: 30px;
+}
+
+.iconSpacing {
     margin-right: 10px;
 }
 
+.iconText {
+    display: flex;
+    align-items: center;
+    margin: 20px 0; 
+}
 
 .addressSection h3,
 .contactsSection h3 {
@@ -66,23 +101,24 @@
 
 .verticalLine {
     border-left: 2px solid rgba(255, 255, 255, 0.1);
-    height: auto; /* Устанавливаем автоматическую высоту */
-    align-self: stretch; /* Растягиваем вертикальную линию по высоте секции */
-    margin: 0 20px; /* Промежуток между линией и секциями */
+    height: auto;
+    align-self: stretch;
+    margin: 0 20px;
+    height: 400px;
 }
 
 .footerBottom {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрируем по горизонтали */
+    align-items: center;
     padding-top: 100px;
     margin-top: 20px;
 }
 
 .footerBottomLine {
     border-top: 2px solid rgba(255, 255, 255, 0.1);
-    width: 80%; /* Устанавливаем ширину линии */
-    margin-bottom: 10px; /* Добавляем отступ снизу */
+    width: 80%;
+    margin-bottom: 10px;
 }
 
 .footerBottomText {
@@ -90,3 +126,79 @@
 }
 
 
+/* Стили для мобильных устройств (максимальная ширина экрана 600px) */
+@media (max-width: 600px) {
+  .footer {
+    padding: 40px 0;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .logoSection,
+  .addressSection,
+  .contactsSection {
+    width: 100%;
+    flex: none;
+    text-align: center;
+  }
+
+  .socialIcons {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .verticalLine {
+    display: none;
+  }
+
+  .footerBottom {
+    padding-top: 50px;
+  }
+
+  .footerBottomLine {
+    width: 100%;
+  }
+}
+
+/* Стили для планшетов (минимальная ширина экрана 601px и максимальная ширина экрана 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .footer {
+    padding: 50px 0;
+  }
+
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 15px;
+  }
+
+  .logoSection,
+  .addressSection,
+  .contactsSection {
+    width: 100%;
+    flex: none;
+    text-align: center;
+  }
+
+  .socialIcons {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .verticalLine {
+    display: none;
+  }
+
+  .footerBottom {
+    padding-top: 70px;
+  }
+
+  .footerBottomLine {
+    width: 90%;
+  }
+}

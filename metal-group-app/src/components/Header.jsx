@@ -1,65 +1,100 @@
-"use client"
+import { useState } from 'react'
 import { CiShoppingCart } from 'react-icons/ci'
 import styles from '@/styles/Header.module.css'
-import { useRouter } from 'next/navigation'
-import { useState, useEffect } from 'react'
-import enTranslations from '../locales/en/translation.json'
-import ruTranslations from '../locales/ru/translation.json'
-const Header = ({ lang }) => {
-   const router = useRouter()
-    const [locale, setLocale] = useState(lang || 'en')
-	const translations = locale === 'en' ? enTranslations : ruTranslations
-  useEffect(() => {
-		setLocale(lang)
-	}, [lang])
+import { useRouter, usePathname } from 'next/navigation'
+import LanguageSwitcher from './LanguageSwitcher'
+import { Link } from 'react-scroll'
+import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
+const Header = () => {
+	const router = useRouter()
+	const pathname = usePathname()
+	const [isMenuOpen, setIsMenuOpen] = useState(false)
+	const { t, i18n } = useTranslation()
+
+	const cartItems = useSelector(state => state.cart.items)
+	const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0)
+
+	const handleMenuToggle = () => {
+		setIsMenuOpen(!isMenuOpen)
+	}
+
 	return (
 		<header className={styles.header}>
-			<img src='/logo.jpg' alt='' />
-			<nav className={styles.nav}>
+			<div
+				className={`${styles.burgerMenu} ${isMenuOpen ? styles.open : ''}`}
+				onClick={handleMenuToggle}
+			>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<a href='/'>
+				<img src='/lg5.png' alt='' className={styles.logoImg} />
+			</a>
+			<a
+				href='#'
+				className={pathname === '/cart' ? styles.active : ''}
+				onClick={() => router.push('/cart')}
+			>
+				<span
+					className={`${styles.cartButton} ${
+						isMenuOpen ? styles.hideOnMobile : ''
+					}`}
+				>
+					<CiShoppingCart size={30} color='white' />
+					{totalItems > 0 && (
+						<span className={styles.cartCount}>{totalItems}</span>
+					)}
+				</span>
+			</a>
+			{isMenuOpen && (
+				<div className={styles.overlay} onClick={handleMenuToggle} />
+			)}
+			<nav className={`${styles.nav} ${isMenuOpen ? styles.showMenu : ''}`}>
 				<a
 					href='#'
-					className={router.pathname === '/' ? 'active' : ''}
+					className={pathname === '/' ? styles.active : ''}
 					onClick={() => router.push('/')}
 				>
-					{translations.Home}
+					<p>{t('home')}</p>
 				</a>
+				<Link to='services' smooth={true} duration={500}>
+					<p>{t('services')}</p>{' '}
+				</Link>
 				<a
 					href='#'
-					className={router.pathname === '/services' ? 'active' : ''}
-					onClick={() => router.push('/services')}
-				>
-					{translations.Services}
-				</a>
-				<a
-					href='#'
-					className={router.pathname === '/products' ? 'active' : ''}
+					className={pathname === '/products' ? styles.active : ''}
 					onClick={() => router.push('/products')}
 				>
-					{translations.Products}
+					<p>{t('products')}</p>
 				</a>
 				<a
 					href='#'
-					className={router.pathname === '/about' ? 'active' : ''}
+					className={pathname === '/about' ? styles.active : ''}
 					onClick={() => router.push('/about')}
 				>
-					{translations.About_us}
+					<p>{t('about_us')}</p>
 				</a>
 				<a
 					href='#'
-					className={router.pathname === '/cart' ? 'active' : ''}
+					className={pathname === '/cart' ? styles.active : ''}
 					onClick={() => router.push('/cart')}
 				>
 					<span>
-						{translations.Cart}
+						<p>{t('cart')}</p>
 						<CiShoppingCart size={30} />
+						{totalItems > 0 && (
+							<span className={styles.cartCount}>{totalItems}</span>
+						)}
 					</span>
 				</a>
+				<div className={styles.languageSwitcher}>
+					<LanguageSwitcher />
+				</div>
 			</nav>
-			<button onClick={() => setLocale(locale === 'en' ? 'ru' : 'en')}>
-				{locale === 'en' ? 'Switch to RU' : 'Switch to EN'}
-			</button>
 		</header>
 	)
 }
 
-export default Header;
+export default Header

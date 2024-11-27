@@ -1,3 +1,4 @@
+/* styles/ProductCard.module.css */
 .productCard {
   margin-top: 80px;
   margin-bottom: 20px;
@@ -6,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 5px 0px rgba(0, 64, 128, 0.1);
   transition: transform 0.2s ease-in-out;
   height: 400px;
   overflow: hidden;
@@ -14,31 +15,35 @@
   width: 250px;
   background-color: white;
   border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 2px 2px 5px 0px rgba(0, 64, 128, 0.1);
   cursor: pointer;
+    text-decoration: none; /* Убирает подчеркивание */
+  color: inherit; /* Наследует цвет */
 }
 
 .productCard:hover {
   transform: scale(1.05);
 }
 
+
 .imageBox {
   position: relative;
-  overflow: hidden;
   width: 100%;
-  height: 350px;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .productImage {
   max-width: 100%;
-  height: auto;
+  max-height: 100%;
+  object-fit: cover; 
 }
 
 .productInfo {
   width: 100%;
   display: flex;
-  height: 80px;
+  height: 30%; 
   align-items: center;
   border-top: 1px solid #ddd;
   justify-content: space-between;
@@ -61,14 +66,14 @@
 }
 
 .cartBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 74px;
-    height: 100px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-left: -5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 74px;
+  height: 80px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: -5%;
 }
 
 .cartBox:hover {
@@ -87,14 +92,13 @@
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 8px;
-    color: white;
+  color: white;
 }
 
 .productPrice {
   font-size: 1rem;
   color: #888;
   margin-bottom: 8px;
-
 }
 
 .addToCartMessage {
@@ -110,4 +114,72 @@
 
 .checkIcon {
   margin-right: 5px;
+}
+
+
+/* Стили для мобильных устройств (максимальная ширина экрана 600px) */
+@media (max-width: 600px) {
+  .productCard {
+        width: 100%;
+        height: 86%;
+        margin: 10px;
+        margin-top: 20px;
+        margin-left: 0;
+  }
+
+
+  .productTitle {
+    font-size: 12px;
+  }
+  .imageBox {
+    height: 68%;
+  }
+
+  .productInfo {
+height: 23%; flex-direction: column; justify-content: center; padding: 10px;
+  }
+
+  .productBox {
+    text-align: center;
+    padding-right: 0;
+    margin-left: 0;
+  }
+
+  .cartBox {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+/* Стили для планшетов (минимальная ширина экрана 601px и максимальная ширина экрана 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .productCard {
+    width: 48%;
+    height: auto;
+    margin: 10px;
+    margin-top: 30px;
+  }
+
+  .imageBox {
+    height: 60%;
+  }
+
+
+  .productInfo {
+height: 28%;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+  }
+
+  .productBox {
+    text-align: center;
+    padding-right: 0;
+    margin-left: 0;
+  }
+
+  .cartBox {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 }

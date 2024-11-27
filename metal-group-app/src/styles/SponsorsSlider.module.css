@@ -1,25 +1,48 @@
 .sponsorsSliderContainer {
-  width: 100%; /* ширина контейнера слайдера */
-  margin: 0 auto; /* центрирование контейнера */
-  padding: 0px 0; /* отступы сверху и снизу */
+  width: 100%; 
+  margin: 0 auto; 
+  padding: 0; 
 }
 
 .slickSlide {
   display: flex;
-  justify-content: center; /* центрирование изображения */
-  align-items: center;
+  justify-content: center; 
+  align-items: center; 
   background-color: white;
-  padding: 0 10px; /* отступы по бокам для уменьшения расстояния между слайдами */
-  height: 150px;
+  padding: 0 10px; 
+  height: 100px; 
 }
 
 .slickSlide img {
-  max-width: 100%; /* изображение будет занимать всю ширину слайда */
-  max-height: 80px; /* максимальная высота изображения */
-  object-fit: contain; /* сохраняем пропорции изображения */
-  margin: 0 auto; /* центрирование изображения */
+  max-width: 200px; 
+  height: 100px; 
+  object-fit: contain; 
+  margin: auto; 
 }
 
 .slick-prev, .slick-next {
-  display: none !important; /* Скрываем стрелки */
+  display: none !important; 
+}
+
+@media (max-width: 1024px) {
+  .slickSlide {
+    height: 80px; 
+  }
+
+  .slickSlide img {
+    max-width: 150px; 
+    height: 80px; 
+  }
+}
+
+/* Styles for mobile devices */
+@media (max-width: 600px) {
+  .slickSlide {
+    height: 60px; 
+  }
+
+  .slickSlide img {
+    max-width: 100px; 
+    height: 60px; 
+  }
 }

@@ -15,23 +15,27 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background:  rgba(18, 40, 59, 0.7);
+    background: rgba(18, 40, 59, 0.7);
 }
 
 .trustText {
     position: relative;
     text-align: left;
     padding: 20px;
+    z-index: 1; /* Убедитесь, что текст выше наложения */
 }
 
 .trustText h2 {
     font-size: 36px;
     margin-bottom: 20px;
+    margin-left: 0; /* Убрать отступ */
 }
 
 .trustText ul {
     list-style: none;
     padding: 0;
+    margin: 0; /* Добавлено для устранения внешних отступов */
+    position: relative; /* Убрано абсолютное позиционирование */
 }
 
 .trustText li {
@@ -39,9 +43,61 @@
     margin-bottom: 10px;
     display: flex;
     align-items: center;
+    width: 100%; /* Изменено на 100% для адаптивности */
+    background-color: rgba(0, 0, 0, .20);
+    padding: 10px; /* Добавлено для внутреннего отступа */
 }
 
 .trustText li::before {
     content: '✔️';
     margin-right: 10px;
+}
+
+/* Стили для планшетов и ноутбуков */
+@media (max-width: 1024px) {
+    .trustBoxContainer {
+        height: auto;
+        margin-top: 50px;
+        padding: 20px;
+    }
+
+    .trustText h2 {
+        font-size: 28px;
+        margin-left: 0;
+    }
+
+    .trustText ul {
+        padding-left: 0;
+    }
+
+    .trustText li {
+        font-size: 18px;
+        padding: 8px;
+        margin-bottom: 8px; /* Уменьшение расстояния между элементами */
+    }
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 600px) {
+    .trustBoxContainer {
+        height: auto;
+        padding: 20px;
+        margin-top: 30px; /* Уменьшено для мобильных устройств */
+    }
+
+    .trustText h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        text-align: center; /* Центрирование заголовка */
+    }
+
+    .trustText ul {
+        padding-left: 0;
+    }
+
+    .trustText li {
+        font-size: 16px;
+        padding: 6px;
+        margin-bottom: 6px; /* Уменьшение расстояния между элементами */
+    }
 }
