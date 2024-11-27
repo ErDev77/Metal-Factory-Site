@@ -14,6 +14,12 @@ import LoadingPage from '@/components/LoadingPage'
 import { Snackbar, Alert } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
+export async function generateStaticParams() {
+	return products.map(product => ({
+		id: product.id.toString(), 
+	}))
+}
+
 const ProductPage = () => {
 	const { t, i18n } = useTranslation()
 	const [loading, setLoading] = useState(true)
@@ -62,6 +68,8 @@ const ProductPage = () => {
 	if (loading) {
 		return <LoadingPage />
 	}
+
+	
 
 	const handleAddToCart = () => {
 		const productToAdd = {
