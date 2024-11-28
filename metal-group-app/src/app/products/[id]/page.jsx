@@ -14,11 +14,15 @@ import LoadingPage from '@/components/LoadingPage'
 import { Snackbar, Alert } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
-export async function generateStaticParams() {
-	return products.map(product => ({
-		id: product.id.toString(), 
-	}))
-}
+// export async function generateStaticParams() {
+// 	const products = await fetchProducts() 
+
+// 	return products.map(product => ({
+// 		id: product.id.toString(), 
+// 	}))
+// }
+
+
 
 const ProductPage = () => {
 	const { t, i18n } = useTranslation()
